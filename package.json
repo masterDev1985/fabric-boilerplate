@@ -9,9 +9,9 @@
     "build-materialize-css": "node-sass --include-path scss client/assets/css/materialize_scss/materialize.scss client/assets/css/materialize.css",
     "watch-materialize-css": "node-sass --watch --include-path scss client/assets/css/materialize_scss/materialize.scss client/assets/css/materialize.css",
     "gobuild": "cd src/chaincode && GOPATH=$(pwd)/../.. && go build chaincode.go || true",
-    "nodemon": "GOPATH=$(pwd) nodemon ./bin/www",
-    "deployAndRegister": "GOPATH=$(pwd) node blockchain/deployBluemix/deployAndRegister.js",
-    "start": "npm run build-css | npm run watch-css | npm run nodemon"
+    "nodemon": "set GOPATH=$(pwd); nodemon ./bin/www",
+    "deployAndRegister": "set GOPATH=$(pwd); node blockchain/deployBluemix/deployAndRegister.js",
+    "start": "node bin/www"
   },
   "dependencies": {
     "adm-zip": "^0.4.7",
@@ -22,7 +22,7 @@
     "debug": "~2.2.0",
     "express": "~4.13.1",
     "fs-extra": "^0.30.0",
-    "hfc": "0.5.3",
+    "hfc": "0.5.4",
     "jsonwebtoken": "^5.7.0",
     "morgan": "~1.6.1",
     "watchjs": "0.0.0",
